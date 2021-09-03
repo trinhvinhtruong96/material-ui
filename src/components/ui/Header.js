@@ -7,7 +7,8 @@ import {
     useScrollTrigger
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 
 function ElevationScroll(props) {
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "3em"
     },
     logo: {
-        height: "7em"
+        height: "8em"
     },
     tabsContainer: {
         marginLeft: "auto"
@@ -44,25 +45,99 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 25,
         marginLeft: 50,
         height: 45,
+    },
+    logoContainer: {
+        padding: 0,
+        "&:hover": {
+            backgroundColor: "transparent"
+        }
     }
 }));
 
 const Header = () => {
     const classes = useStyles();
+    const [value, setValue] = useState(0);
+
+    const handleChange = (e, value) => {
+        setValue(value);
+    }
+
+    useEffect(() => {
+        switch (window.location.pathname) {
+            case "/":
+                setValue(0);
+                break;
+            case "/services":
+                setValue(1);
+                break;
+            case "/revolution":
+                setValue(2);
+                break;
+            case "/about":
+                setValue(3);
+                break;
+            case "/contact":
+                setValue(4);
+                break;
+            case "/estimate":
+                setValue(5);
+                break;
+            default:
+                break;
+        }
+    }, [])
+
     return (
         <>
             <ElevationScroll>
                 <AppBar position="fixed">
                     <Toolbar disableGutters>
-                        <img src={logo} className={classes.logo} alt="logo" />
-                        <Tabs className={classes.tabsContainer}>
-                            <Tab className={classes.tab} label="Home" />
-                            <Tab className={classes.tab} label="Services" />
-                            <Tab className={classes.tab} label="The Revolution" />
-                            <Tab className={classes.tab} label="About Us" />
-                            <Tab className={classes.tab} label="Contact Us" />
+                        <Button
+                            component={Link}
+                            to="/"
+                            disableRipple
+                            className={classes.logoContainer}
+                        >
+                            <img src={logo} className={classes.logo} alt="logo" />
+                        </Button>
+                        <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            className={classes.tabsContainer}
+                            indicatorColor="primary"
+                        >
+                            <Tab
+                                className={classes.tab}
+                                component={Link}
+                                to="/"
+                                label="Home" />
+                            <Tab
+                                className={classes.tab}
+                                component={Link}
+                                to="/services"
+                                label="Services" />
+                            <Tab
+                                className={classes.tab}
+                                component={Link}
+                                to="/revolution"
+                                label="The Revolution" />
+                            <Tab
+                                className={classes.tab}
+                                component={Link}
+                                to="/about"
+                                label="About Us" />
+                            <Tab
+                                className={classes.tab}
+                                component={Link}
+                                to="/contact"
+                                label="Contact Us" />
                         </Tabs>
-                        <Button variant="contained" color="secondary" className={classes.button}>Free Estimate</Button>
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            component={Link}
+                            to="/estimate"
+                            className={classes.button}>Free Estimate</Button>
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
