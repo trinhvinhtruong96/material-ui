@@ -12,6 +12,7 @@ function App() {
           <Route exact path="/" component={() => <div>Home</div>} />
           <Route exact path="/services" component={() => <div>services</div>} />
           <Route exact path="/customsoftware" component={() => <div>customsoftware</div>} />
+          <Route exact path="/mobileapps" component={() => <div>Mobile apps</div>} />
           <Route exact path="/websites" component={() => <div>websites</div>} />
           <Route exact path="/revolution" component={() => <div>revolution</div>} />
           <Route exact path="/about" component={() => <div>about</div>} />
