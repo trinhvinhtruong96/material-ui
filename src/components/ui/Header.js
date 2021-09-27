@@ -6,7 +6,10 @@ import {
     Toolbar,
     useScrollTrigger,
     SwipeableDrawer,
-    IconButton
+    IconButton,
+    List,
+    ListItem,
+    ListItemText,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import React, { useEffect, useState } from 'react';
@@ -73,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     },
     menu: {
         backgroundColor: theme.palette.common.blue,
-        color: "white"
+        color: "white",
     },
     menuItem: {
         ...theme.typography.tab,
@@ -91,6 +94,22 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             backgroundColor: "transparent"
         }
+    },
+    drawer: {
+        backgroundColor: theme.palette.common.blue,
+    },
+    drawerItem: {
+        ...theme.typography.tab,
+        color: "white"
+    },
+    drawerItemEstimate: {
+        backgroundColor: theme.palette.common.orange
+    },
+    drawerItemSelected: {
+        opacity: 1
+    },
+    appbar: {
+        zIndex: theme.zIndex.modal + 1
     }
 }));
 
@@ -126,48 +145,39 @@ const Header = () => {
     }
 
     const menuOptions = [
-        { name: "Services", link: "/services" },
-        { name: "Custom Software Development", link: "/customsoftware" },
-        { name: "Mobile App Development", link: "/mobileapps" },
-        { name: "Website Development", link: "/websites" },
+        { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
+        { name: "Custom Software Development", link: "/customsoftware", activeIndex: 1, selectedIndex: 1 },
+        { name: "Mobile App Development", link: "/mobileapps", activeIndex: 1, selectedIndex: 2 },
+        { name: "Website Development", link: "/websites", activeIndex: 1, selectedIndex: 3 },
     ];
 
+    const routes = [
+        { name: "Home", link: "/", activeIndex: 0 },
+        {
+            name: "Services",
+            link: "/services",
+            activeIndex: 1,
+            ariaControls: anchorEl ? "simple-menu" : undefined,
+            ariaHaspopup: anchorEl ? "true" : undefined,
+            onMouseOver: (e) => handleClick(e)
+        },
+        { name: "The Revolution", link: "/revolution", activeIndex: 2 },
+        { name: "About Us", link: "/about", activeIndex: 3 },
+        { name: "Contact Us", link: "/contact", activeIndex: 4 },
+    ]
+
     useEffect(() => {
-        switch (window.location.pathname) {
-            case "/":
-                setValue(0);
-                break;
-            case "/services":
-                setValue(1);
-                setSelectedIndex(0);
-                break;
-            case "/customsoftware":
-                setValue(1);
-                setSelectedIndex(1);
-                break;
-            case "/mobileapps":
-                setValue(1);
-                setSelectedIndex(2);
-                break;
-            case "/websites":
-                setValue(1);
-                setSelectedIndex(3);
-                break;
-            case "/revolution":
-                setValue(2);
-                break;
-            case "/about":
-                setValue(3);
-                break;
-            case "/contact":
-                setValue(4);
-                break;
-            case "/estimate":
-                setValue(5);
-                break;
-            default:
-                break;
-        }
+        [...menuOptions, ...routes].forEach(route => {
+            switch (window.location.pathname) {
+                case route.link:
+                    setValue(route.activeIndex);
+                    route.selectedIndex && setSelectedIndex(route.selectedIndex);
+                    break;
+                default:
+                    break;
+            }
+        })
+        // eslint-disable-next-line
     }, [])
 
     const tabs = (
@@ -178,35 +188,18 @@ const Header = () => {
                 className={classes.tabsContainer}
                 indicatorColor="primary"
             >
-                <Tab
-                    className={classes.tab}
-                    component={Link}
-                    to="/"
-                    label="Home" />
-                <Tab
-                    aria-controls={anchorEl ? "simple-menu" : undefined}
-                    aria-haspopup={anchorEl ? "true" : undefined}
-                    className={classes.tab}
-                    component={Link}
-                    to="/services"
-                    label="Services"
-                    onMouseOver={handleClick}
-                />
-                <Tab
-                    className={classes.tab}
-                    component={Link}
-                    to="/revolution"
-                    label="The Revolution" />
-                <Tab
-                    className={classes.tab}
-                    component={Link}
-                    to="/about"
-                    label="About Us" />
-                <Tab
-                    className={classes.tab}
-                    component={Link}
-                    to="/contact"
-                    label="Contact Us" />
+                {routes.map((route, index) => (
+                    <Tab
+                        key={route.link + index}
+                        aria-controls={route.ariaControls}
+                        aria-haspopup={route.ariaHaspopup}
+                        className={classes.tab}
+                        component={Link}
+                        to={route.link}
+                        label={route.name}
+                        onMouseOver={route.onMouseOver}
+                    />
+                ))}
             </Tabs>
             <Button
                 variant="contained"
@@ -228,7 +221,7 @@ const Header = () => {
             >
                 {menuOptions.map((el, index) => (
                     <MenuItem
-                        key={el.link}
+                        key={el.link + index}
                         component={Link}
                         to={el.link}
                         selected={index === selectedIndex && value === 1}
@@ -247,10 +240,48 @@ const Header = () => {
             <SwipeableDrawer
                 disableBackdropTransition={!iOS}
                 disableDiscovery={iOS}
-                open={openDrawer}
+                open={openDrawer || false}
                 onClose={() => setOpenDrawer(false)}
+                onOpen={() => setOpenDrawer(true)}
+                classes={{ paper: classes.drawer }}
             >
-                Example Drawer
+                <div className={classes.toolbarMargin} />
+                <List disablePadding>
+                    {routes.map((route, index) => (
+                        <ListItem
+                            key={route.link + index}
+                            component={Link}
+                            to={route.link}
+                            divider
+                            button
+                            selected={value === route.activeIndex}
+                            onClick={() => { setOpenDrawer(false); setValue(route.activeIndex); }}
+                        >
+                            <ListItemText
+                                className={value === route.activeIndex ? [classes.drawerItemSelected, classes.drawerItem].join(" ") : classes.drawerItem}
+                                disableTypography
+                            >
+                                {route.name}
+                            </ListItemText>
+                        </ListItem>
+                    ))}
+                    <ListItem
+                        component={Link}
+                        to="/estimate"
+                        divider
+                        button
+                        selected={value === 5}
+                        className={classes.drawerItemEstimate}
+                        onClick={() => { setOpenDrawer(false); setValue(5); }}
+                    >
+                        <ListItemText
+                            className={value === 5 ? [classes.drawerItemSelected, classes.drawerItem].join(" ") : classes.drawerItem}
+                            disableTypography
+                        >
+                            Free Estimate
+                        </ListItemText>
+                    </ListItem>
+                </List>
             </SwipeableDrawer>
             <IconButton
                 className={classes.drawerIconContainer}
@@ -264,7 +295,7 @@ const Header = () => {
     return (
         <>
             <ElevationScroll>
-                <AppBar position="fixed">
+                <AppBar position="fixed" className={classes.appbar}>
                     <Toolbar disableGutters>
                         <Button
                             component={Link}
