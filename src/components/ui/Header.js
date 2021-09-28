@@ -209,6 +209,7 @@ const Header = () => {
                 className={classes.button}>Free Estimate
             </Button>
             <Menu
+                style={{ zIndex: 1400 }}
                 id="simple-menu"
                 anchorEl={anchorEl}
                 keepMounted
