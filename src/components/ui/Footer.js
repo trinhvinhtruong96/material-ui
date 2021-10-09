@@ -100,7 +100,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 to="/customsoftware"
                                 onClick={() => { setValue(1); setSelectedIndex(1) }}
                             >
-                                Custom Software Development
+                                iOS/Android App Development
                             </Grid>
                             <Grid
                                 item
