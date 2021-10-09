@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/material-ui/static/js/main.12750200.chunk.js",
-    "main.js.map": "/material-ui/static/js/main.12750200.chunk.js.map",
+    "main.js": "/material-ui/static/js/main.77d24dc1.chunk.js",
+    "main.js.map": "/material-ui/static/js/main.77d24dc1.chunk.js.map",
     "runtime-main.js": "/material-ui/static/js/runtime-main.2faf8b8c.js",
     "runtime-main.js.map": "/material-ui/static/js/runtime-main.2faf8b8c.js.map",
     "static/js/2.424409b9.chunk.js": "/material-ui/static/js/2.424409b9.chunk.js",
@@ -20,6 +20,6 @@
   "entrypoints": [
     "static/js/runtime-main.2faf8b8c.js",
     "static/js/2.424409b9.chunk.js",
-    "static/js/main.12750200.chunk.js"
+    "static/js/main.77d24dc1.chunk.js"
   ]
 }
