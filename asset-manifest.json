@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.js": "/material-ui/static/js/main.0c9b3e3a.chunk.js",
-    "main.js.map": "/material-ui/static/js/main.0c9b3e3a.chunk.js.map",
+    "main.js": "/material-ui/static/js/main.12750200.chunk.js",
+    "main.js.map": "/material-ui/static/js/main.12750200.chunk.js.map",
     "runtime-main.js": "/material-ui/static/js/runtime-main.2faf8b8c.js",
     "runtime-main.js.map": "/material-ui/static/js/runtime-main.2faf8b8c.js.map",
-    "static/js/2.7425cf84.chunk.js": "/material-ui/static/js/2.7425cf84.chunk.js",
-    "static/js/2.7425cf84.chunk.js.map": "/material-ui/static/js/2.7425cf84.chunk.js.map",
+    "static/js/2.424409b9.chunk.js": "/material-ui/static/js/2.424409b9.chunk.js",
+    "static/js/2.424409b9.chunk.js.map": "/material-ui/static/js/2.424409b9.chunk.js.map",
     "index.html": "/material-ui/index.html",
-    "static/js/2.7425cf84.chunk.js.LICENSE.txt": "/material-ui/static/js/2.7425cf84.chunk.js.LICENSE.txt",
+    "static/js/2.424409b9.chunk.js.LICENSE.txt": "/material-ui/static/js/2.424409b9.chunk.js.LICENSE.txt",
+    "static/media/Custom Software Icon.c2d29ed8.svg": "/material-ui/static/media/Custom Software Icon.c2d29ed8.svg",
     "static/media/Footer Adornment.b344a3e1.svg": "/material-ui/static/media/Footer Adornment.b344a3e1.svg",
     "static/media/facebook.5ebde1b6.svg": "/material-ui/static/media/facebook.5ebde1b6.svg",
     "static/media/instagram.7951df5d.svg": "/material-ui/static/media/instagram.7951df5d.svg",
     "static/media/logo.svg": "/material-ui/static/media/logo.b9bbc23c.svg",
-    "static/media/twitter.e091825a.svg": "/material-ui/static/media/twitter.e091825a.svg"
+    "static/media/mobileIcon.17cd04f1.svg": "/material-ui/static/media/mobileIcon.17cd04f1.svg",
+    "static/media/twitter.e091825a.svg": "/material-ui/static/media/twitter.e091825a.svg",
+    "static/media/websiteIcon.549318f5.svg": "/material-ui/static/media/websiteIcon.549318f5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2faf8b8c.js",
-    "static/js/2.7425cf84.chunk.js",
-    "static/js/main.0c9b3e3a.chunk.js"
+    "static/js/2.424409b9.chunk.js",
+    "static/js/main.12750200.chunk.js"
   ]
 }
