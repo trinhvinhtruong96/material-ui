@@ -20,15 +20,15 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/services" component={() => <div>services</div>} />
-          <Route exact path="/customsoftware" component={() => <div>customsoftware</div>} />
-          <Route exact path="/mobileapps" component={() => <div>Mobile apps</div>} />
-          <Route exact path="/websites" component={() => <div>websites</div>} />
-          <Route exact path="/revolution" component={() => <div>revolution</div>} />
-          <Route exact path="/about" component={() => <div>about</div>} />
-          <Route exact path="/contact" component={() => <div>contact</div>} />
-          <Route exact path="/estimate" component={() => <div>estimate</div>} />
+          <Route exact path="/material-ui/" component={LandingPage} />
+          <Route exact path="/material-ui/services" component={() => <div>services</div>} />
+          <Route exact path="/material-ui/customsoftware" component={() => <div>customsoftware</div>} />
+          <Route exact path="/material-ui/mobileapps" component={() => <div>Mobile apps</div>} />
+          <Route exact path="/material-ui/websites" component={() => <div>websites</div>} />
+          <Route exact path="/material-ui/revolution" component={() => <div>revolution</div>} />
+          <Route exact path="/material-ui/about" component={() => <div>about</div>} />
+          <Route exact path="/material-ui/contact" component={() => <div>contact</div>} />
+          <Route exact path="/material-ui/estimate" component={() => <div>estimate</div>} />
         </Switch>
         <Footer
           value={value}

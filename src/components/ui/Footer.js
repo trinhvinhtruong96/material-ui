@@ -75,7 +75,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/"
+                                to="/material-ui/"
                                 onClick={() => setValue(0)}
                             >
                                 Home
@@ -88,7 +88,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/services"
+                                to="/material-ui/services"
                                 onClick={() => { setValue(1); setSelectedIndex(0) }}
                             >
                                 Services
@@ -97,7 +97,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/customsoftware"
+                                to="/material-ui/customsoftware"
                                 onClick={() => { setValue(1); setSelectedIndex(1) }}
                             >
                                 iOS/Android App Development
@@ -106,7 +106,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/mobileapps"
+                                to="/material-ui/mobileapps"
                                 onClick={() => { setValue(1); setSelectedIndex(2) }}
                             >
                                 Mobile App Development
@@ -115,7 +115,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/website"
+                                to="/material-ui/website"
                                 onClick={() => { setValue(1); setSelectedIndex(3) }}
                             >
                                 Website Development
@@ -128,7 +128,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/revolution"
+                                to="/material-ui/revolution"
                                 onClick={() => setValue(2)}
                             >
                                 The Revolution
@@ -137,7 +137,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/revolution"
+                                to="/material-ui/revolution"
                                 onClick={() => setValue(2)}
                             >
                                 Vision
@@ -146,7 +146,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/revolution"
+                                to="/material-ui/revolution"
                                 onClick={() => setValue(2)}
                             >
                                 Technology
@@ -155,7 +155,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/revolution"
+                                to="/material-ui/revolution"
                                 onClick={() => setValue(2)}
                             >
                                 Process
@@ -168,7 +168,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/about"
+                                to="/material-ui/about"
                                 onClick={() => setValue(3)}
                             >
                                 History
@@ -177,7 +177,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/about"
+                                to="/material-ui/about"
                                 onClick={() => setValue(3)}
                             >
                                 Team
@@ -186,7 +186,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/about"
+                                to="/material-ui/about"
                                 onClick={() => setValue(3)}
                             >
                                 About Us
@@ -199,7 +199,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                                 item
                                 className={classes.link}
                                 component={Link}
-                                to="/contact"
+                                to="/material-ui/contact"
                                 onClick={() => setValue(4)}
                             >
                                 Contact Us

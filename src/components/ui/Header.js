@@ -146,25 +146,25 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
     }
 
     const menuOptions = [
-        { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
-        { name: "Custom Software Development", link: "/customsoftware", activeIndex: 1, selectedIndex: 1 },
-        { name: "iOS/Android App Development", link: "/mobileapps", activeIndex: 1, selectedIndex: 2 },
-        { name: "Website Development", link: "/websites", activeIndex: 1, selectedIndex: 3 },
+        { name: "Services", link: "/material-ui/services", activeIndex: 1, selectedIndex: 0 },
+        { name: "Custom Software Development", link: "/material-ui/customsoftware", activeIndex: 1, selectedIndex: 1 },
+        { name: "iOS/Android App Development", link: "/material-ui/mobileapps", activeIndex: 1, selectedIndex: 2 },
+        { name: "Website Development", link: "/material-ui/websites", activeIndex: 1, selectedIndex: 3 },
     ];
 
     const routes = [
-        { name: "Home", link: "/", activeIndex: 0 },
+        { name: "Home", link: "/material-ui/", activeIndex: 0 },
         {
             name: "Services",
-            link: "/services",
+            link: "/material-ui/services",
             activeIndex: 1,
             ariaControls: anchorEl ? "simple-menu" : undefined,
             ariaHaspopup: anchorEl ? "true" : undefined,
             onMouseOver: (e) => handleClick(e)
         },
-        { name: "The Revolution", link: "/revolution", activeIndex: 2 },
-        { name: "About Us", link: "/about", activeIndex: 3 },
-        { name: "Contact Us", link: "/contact", activeIndex: 4 },
+        { name: "The Revolution", link: "/material-ui/revolution", activeIndex: 2 },
+        { name: "About Us", link: "/material-ui/about", activeIndex: 3 },
+        { name: "Contact Us", link: "/material-ui/contact", activeIndex: 4 },
     ]
 
     useEffect(() => {
@@ -206,7 +206,7 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                 variant="contained"
                 color="secondary"
                 component={Link}
-                to="/estimate"
+                to="/material-ui/estimate"
                 className={classes.button}>Free Estimate
             </Button>
             <Menu
@@ -269,7 +269,7 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                     ))}
                     <ListItem
                         component={Link}
-                        to="/estimate"
+                        to="/material-ui/estimate"
                         divider
                         button
                         selected={value === 5}
@@ -301,7 +301,7 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                     <Toolbar disableGutters>
                         <Button
                             component={Link}
-                            to="/"
+                            to="/material-ui/"
                             disableRipple
                             className={classes.logoContainer}
                         >
