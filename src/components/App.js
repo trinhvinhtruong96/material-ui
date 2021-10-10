@@ -20,7 +20,13 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path="/material-ui/" component={LandingPage} />
+          <Route exact path="/material-ui/" render={(props) =>
+            <LandingPage
+              {...props}
+              setValue={setValue}
+              setSelectedIndex={setSelectedIndex}
+            />}
+          />
           <Route exact path="/material-ui/services" component={() => <div>services</div>} />
           <Route exact path="/material-ui/customsoftware" component={() => <div>customsoftware</div>} />
           <Route exact path="/material-ui/mobileapps" component={() => <div>Mobile apps</div>} />
@@ -31,9 +37,7 @@ function App() {
           <Route exact path="/material-ui/estimate" component={() => <div>estimate</div>} />
         </Switch>
         <Footer
-          value={value}
           setValue={setValue}
-          selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
         />
       </BrowserRouter>

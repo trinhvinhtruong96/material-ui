@@ -174,6 +174,9 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                     setValue(route.activeIndex);
                     route.selectedIndex && setSelectedIndex(route.selectedIndex);
                     break;
+                case "/material-ui/estimate":
+                    setValue(5);
+                    break;
                 default:
                     break;
             }
@@ -203,11 +206,15 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                 ))}
             </Tabs>
             <Button
+                component={Link}
                 variant="contained"
                 color="secondary"
-                component={Link}
                 to="/material-ui/estimate"
-                className={classes.button}>Free Estimate
+                className={classes.button}
+                onClick={() => setValue(5)}
+
+            >
+                Free Estimate
             </Button>
             <Menu
                 style={{ zIndex: 1400 }}

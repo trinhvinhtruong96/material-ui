@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import { makeStyles, useTheme } from '@material-ui/styles';
+import { Link } from 'react-router-dom';
 import animationData from '../animations/landinganimation/data';
 import {
     Button,
@@ -16,6 +17,7 @@ import mobileAppsIcon from '../assets/mobileIcon.svg';
 import websitesIcon from '../assets/websiteIcon.svg';
 import revolutionBackground from "../assets/repeatingBackground.svg";
 import infoBackground from "../assets/infoBackground.svg";
+import CallToAction from './ui/CallToAction';
 
 const useStyles = makeStyles(theme => ({
     animation: {
@@ -122,7 +124,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function LandingPage() {
+export default function LandingPage({ setValue, setSelectedIndex }) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -154,10 +156,24 @@ export default function LandingPage() {
                             className={classes.buttonContainer}
                         >
                             <Grid item>
-                                <Button variant="contained" className={classes.estimateButton}>Free Estimate</Button>
+                                <Button
+                                    component={Link}
+                                    to="/material-ui/estimate"
+                                    variant="contained"
+                                    className={classes.estimateButton}
+                                    onClick={() => setValue(5)}
+                                >
+                                    Free Estimate
+                                </Button>
                             </Grid>
                             <Grid item>
-                                <Button variant="outlined" className={classes.learnButtonHero}>
+                                <Button
+                                    component={Link}
+                                    variant="outlined"
+                                    className={classes.learnButtonHero}
+                                    to="/material-ui/revolution"
+                                    onClick={() => setValue(2)}
+                                >
                                     <span style={{ marginRight: 10 }}>Learn More</span>
                                     <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                                 </Button>
@@ -193,7 +209,13 @@ export default function LandingPage() {
                             Complete digital solutions, from investigation to {" "}
                             <span className={classes.specialText}>celebration</span>
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton}>
+                        <Button
+                            component={Link}
+                            to="/material-ui/customSoftware"
+                            variant="outlined"
+                            className={classes.learnButton}
+                            onClick={() => { setValue(1); setSelectedIndex(1); }}
+                        >
                             <span style={{ marginRight: 10 }}>Learn More</span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
                         </Button>
@@ -220,7 +242,13 @@ export default function LandingPage() {
                             Complete digital solutions, from investigation to {" "}
                             <span className={classes.specialText}>celebration</span>
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton}>
+                        <Button
+                            component={Link}
+                            to="/material-ui/mobileapps"
+                            variant="outlined"
+                            className={classes.learnButton}
+                            onClick={() => { setValue(1); setSelectedIndex(2); }}
+                        >
                             <span style={{ marginRight: 10 }}>Learn More</span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
                         </Button>
@@ -244,7 +272,13 @@ export default function LandingPage() {
                             Complete digital solutions, from investigation to {" "}
                             <span className={classes.specialText}>celebration</span>
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton}>
+                        <Button
+                            component={Link}
+                            to="/material-ui/websites"
+                            variant="outlined"
+                            className={classes.learnButton}
+                            onClick={() => { setValue(1); setSelectedIndex(3); }}
+                        >
                             <span style={{ marginRight: 10 }}>Learn More</span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
                         </Button>
@@ -269,7 +303,13 @@ export default function LandingPage() {
                                     <Typography variant="subtitle1">
                                         Visionary insights coupled with cutting-edge technology is a recipe for revolution.
                                     </Typography>
-                                    <Button variant="outlined" className={classes.learnButtonHero}>
+                                    <Button
+                                        component={Link}
+                                        to="/material-ui/revolution"
+                                        variant="outlined"
+                                        className={classes.learnButtonHero}
+                                        onClick={() => setValue(2)}
+                                    >
                                         <span style={{ marginRight: 10 }}>Learn More</span>
                                         <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                                     </Button>
@@ -287,23 +327,28 @@ export default function LandingPage() {
                     direction="row"
                     style={{ height: "80em" }}
                     alignItems="center"
+                    className={classes.infoBackground}
                 >
                     <Grid
                         item
                         container
-                        style={{ position: "absolute", textAlign: matchesXS ? "center" : "inherit" }}
+                        style={{
+                            textAlign: matchesXS ? "center" : "inherit"
+                        }}
                         direction={matchesSM ? "column" : "row"}
-                        spacing={matchesXS ? 10 : 0}
                     >
                         <Grid item sm style={{ marginLeft: matchesXS ? 0 : matchesSM ? "2em" : "5em", }}>
-                            <Grid container direction="column">
+                            <Grid container direction="column" style={{ marginBottom: matchesXS ? "10em" : 0 }}>
                                 <Typography variant="h2" style={{ color: "white" }}>About Us</Typography>
                                 <Typography variant="subtitle2">Let's get personal</Typography>
                                 <Grid item>
                                     <Button
+                                        component={Link}
+                                        to="/material-ui/about"
                                         variant="outlined"
                                         className={classes.learnButton}
                                         style={{ color: "white", borderColor: "white" }}
+                                        onClick={() => setValue(3)}
                                     >
                                         <span style={{ marginRight: 10 }}>Learn More</span>
                                         <ButtonArrow width={10} height={10} fill="white" />
@@ -317,9 +362,12 @@ export default function LandingPage() {
                                 <Typography variant="subtitle2">Save Hello! <span role="img" aria-label="waving hand">✌</span></Typography>
                                 <Grid item>
                                     <Button
+                                        component={Link}
+                                        to="/material-ui/contact"
                                         variant="outlined"
                                         className={classes.learnButton}
                                         style={{ color: "white", borderColor: "white" }}
+                                        onClick={() => setValue(4)}
                                     >
                                         <span style={{ marginRight: 10 }}>Learn More</span>
                                         <ButtonArrow width={10} height={10} fill="white" />
@@ -328,8 +376,14 @@ export default function LandingPage() {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <div className={classes.infoBackground} />
                 </Grid>
+            </Grid>
+
+            <Grid item> {/*-----Call To Action Block-----*/}
+                <CallToAction
+                    setValue={setValue}
+                    setSelectedIndex={setSelectedIndex}
+                />
             </Grid>
 
         </Grid>
