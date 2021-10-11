@@ -197,7 +197,12 @@ export default function LandingPage({ setValue, setSelectedIndex }) {
             </Grid>
 
             <Grid item> {/*-----Custom Software Block-----*/}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : "flex-start"}>
+                <Grid
+                    container
+                    direction="row"
+                    className={classes.serviceContainer}
+                    justify={matchesSM ? "center" : "flex-start"}
+                >
                     <Grid item style={{ marginLeft: matchesSM ? 0 : "5em", textAlign: matchesSM ? "center" : undefined }}>
                         <Typography variant="h4">
                             Custom Software Development
