@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@material-ui/styles";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import CustomSoftware from "./CustomSoftware";
 import LandingPage from "./LandingPage";
 import Services from "./Services";
 import Footer from "./ui/Footer";
@@ -33,8 +34,15 @@ function App() {
               {...props}
               setValue={setValue}
               setSelectedIndex={setSelectedIndex}
-            />} />
-          <Route exact path="/material-ui/customsoftware" component={() => <div>customsoftware</div>} />
+            />}
+          />
+          <Route exact path="/material-ui/customsoftware" render={(props) =>
+            <CustomSoftware
+              {...props}
+              setValue={setValue}
+              setSelectedIndex={setSelectedIndex}
+            />}
+          />
           <Route exact path="/material-ui/mobileapps" component={() => <div>Mobile apps</div>} />
           <Route exact path="/material-ui/websites" component={() => <div>websites</div>} />
           <Route exact path="/material-ui/revolution" component={() => <div>revolution</div>} />
