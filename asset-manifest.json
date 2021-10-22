@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/material-ui/static/js/main.96845420.chunk.js",
-    "main.js.map": "/material-ui/static/js/main.96845420.chunk.js.map",
+    "main.js": "/material-ui/static/js/main.07afe801.chunk.js",
+    "main.js.map": "/material-ui/static/js/main.07afe801.chunk.js.map",
     "runtime-main.js": "/material-ui/static/js/runtime-main.2faf8b8c.js",
     "runtime-main.js.map": "/material-ui/static/js/runtime-main.2faf8b8c.js.map",
-    "static/js/2.6d4b3c1f.chunk.js": "/material-ui/static/js/2.6d4b3c1f.chunk.js",
-    "static/js/2.6d4b3c1f.chunk.js.map": "/material-ui/static/js/2.6d4b3c1f.chunk.js.map",
+    "static/js/2.928bf0e7.chunk.js": "/material-ui/static/js/2.928bf0e7.chunk.js",
+    "static/js/2.928bf0e7.chunk.js.map": "/material-ui/static/js/2.928bf0e7.chunk.js.map",
     "index.html": "/material-ui/index.html",
-    "static/js/2.6d4b3c1f.chunk.js.LICENSE.txt": "/material-ui/static/js/2.6d4b3c1f.chunk.js.LICENSE.txt",
+    "static/js/2.928bf0e7.chunk.js.LICENSE.txt": "/material-ui/static/js/2.928bf0e7.chunk.js.LICENSE.txt",
     "static/media/Custom Software Icon.c2d29ed8.svg": "/material-ui/static/media/Custom Software Icon.c2d29ed8.svg",
     "static/media/Footer Adornment.b344a3e1.svg": "/material-ui/static/media/Footer Adornment.b344a3e1.svg",
     "static/media/backArrow.7279a766.svg": "/material-ui/static/media/backArrow.7279a766.svg",
@@ -31,7 +31,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.2faf8b8c.js",
-    "static/js/2.6d4b3c1f.chunk.js",
-    "static/js/main.96845420.chunk.js"
+    "static/js/2.928bf0e7.chunk.js",
+    "static/js/main.07afe801.chunk.js"
   ]
 }
